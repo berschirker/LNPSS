@@ -9,8 +9,6 @@ cls
 Write "Downloading Tailscale installer..."
 $wc = New-Object System.Net.WebClient
 $wc.DownloadFile($url, $output)
-#OR
-(New-Object System.Net.WebClient).DownloadFile($url, $output)
 Write-Output "Time taken: $((Get-Date).Subtract($start_time).Seconds) second(s)"
 Write "Download Complete"
 Write-Output "Time taken: $((Get-Date).Subtract($start_time).Seconds) second(s)"
