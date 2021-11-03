@@ -7,7 +7,11 @@ Write "This script will install Tailscale and remove Hamachi from this computer.
 Start-Sleep -Seconds 3
 cls
 Write "Downloading Tailscale installer..."
-Invoke-WebRequest -Uri $url -OutFile $output
+$wc = New-Object System.Net.WebClient
+$wc.DownloadFile($url, $output)
+#OR
+(New-Object System.Net.WebClient).DownloadFile($url, $output)
+Write-Output "Time taken: $((Get-Date).Subtract($start_time).Seconds) second(s)"
 Write "Download Complete"
 Write-Output "Time taken: $((Get-Date).Subtract($start_time).Seconds) second(s)"
 Start-Sleep -Seconds 2
