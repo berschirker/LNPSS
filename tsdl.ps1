@@ -10,7 +10,7 @@ Write "Downloading Tailscale installer..."
 Invoke-WebRequest -Uri $url -OutFile $output
 Write "Download Complete"
 Write-Output "Time taken: $((Get-Date).Subtract($start_time).Seconds) second(s)"
-Start-Sleep -Seconds 2
+Start-Sleep -Seconds 5
 cd C:\Users\Public\
 Write "Installing Tailscale"
 Start-Process -Wait -FilePath "C:\Users\Public\tailscale-ipn-setup-1.16.2.exe" -ArgumentList "/S" -PassThru
