@@ -29,7 +29,7 @@ Write "Hamachi Uninstalled Successfully"
 Start-Sleep -Seconds 2
 cls
 Write "Please Log in to Tailscale"
-Start-Sleep -Seconds 2
+iex "tailscale up" -PassThru
 cls
 Write "Process Complete. Exiting..."
 Start-Sleep -Seconds 3
