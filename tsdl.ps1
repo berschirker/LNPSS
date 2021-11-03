@@ -10,10 +10,8 @@ Write "Downloading Tailscale installer..."
 Invoke-WebRequest -Uri $url -OutFile $output
 Write "Download Complete"
 cd C:\Users\Public\
-cls
 Write "Installing Tailscale..."
 Start-Process -Wait -FilePath "C:\Users\Public\tailscale-ipn-setup-1.16.2.exe" -ArgumentList "/S" -PassThru
-cls
 Write "Tailscale has been installed successfully"
 Start-Sleep -Seconds 2
 Write "Cleaning Up"
@@ -28,6 +26,7 @@ Write "Hamachi Uninstalled Successfully"
 Start-Sleep -Seconds 2
 cls
 Write "Please Log in to Tailscale"
+iex "tailscale up"
 Start-Sleep -Seconds 2
 cls
 Write "Process Complete. Exiting..."
