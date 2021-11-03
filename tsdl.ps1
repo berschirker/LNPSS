@@ -18,7 +18,9 @@ Write "Tailscale has been installed successfully"
 Start-Sleep -Seconds 2
 Write "Cleaning Up"
 Start-Sleep -Seconds 1
+rm tsdldownloader.ps1
 rm tailscale-ipn-setup-1.16.2.exe
+rm tsdl.ps1
 cls
 Write "Uninstalling Hamachi..."
 get-package Logmein* | uninstall-package
