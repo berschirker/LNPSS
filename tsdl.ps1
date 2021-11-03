@@ -10,14 +10,15 @@ Write "Downloading Tailscale installer..."
 Invoke-WebRequest -Uri $url -OutFile $output
 Write "Download Complete"
 Write-Output "Time taken: $((Get-Date).Subtract($start_time).Seconds) second(s)"
-Start-Sleep -Seconds 5
+Start-Sleep -Seconds 2
+cls
 cd C:\Users\Public\
 Write "Installing Tailscale"
 Start-Process -Wait -FilePath "C:\Users\Public\tailscale-ipn-setup-1.16.2.exe" -ArgumentList "/S" -PassThru
 Write "Tailscale has been installed successfully"
 Start-Sleep -Seconds 2
 Write "Cleaning Up"
-Start-Sleep -Seconds 1
+Start-Sleep -Seconds 2
 rm tsdldownloader.ps1
 rm tailscale-ipn-setup-1.16.2.exe
 rm tsdl.ps1
@@ -31,5 +32,5 @@ Write "Please Log in to Tailscale"
 iex "tailscale up" -PassThru
 cls
 Write "Process Complete. Exiting..."
-Start-Sleep -Seconds 3
+Sleep -S 2
 Stop-Process -Id $PID
