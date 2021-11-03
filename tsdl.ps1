@@ -8,12 +8,12 @@ Start-Sleep -Seconds 3
 cls
 Write "Downloading Tailscale installer..."
 Invoke-WebRequest -Uri $url -OutFile $output
+Write "Download Complete"
+Write-Output "Time taken: $((Get-Date).Subtract($start_time).Seconds) second(s)"
 Start-Sleep -Seconds 2
 cd C:\Users\Public\
-Start-Process -Wait -FilePath "C:\Users\Public\tailscale-ipn-setup-1.16.2.exe" -ArgumentList "/S" -PassThru
-cls
 Write "Installing Tailscale"
-cls
+Start-Process -Wait -FilePath "C:\Users\Public\tailscale-ipn-setup-1.16.2.exe" -ArgumentList "/S" -PassThru
 Write "Tailscale has been installed successfully"
 Start-Sleep -Seconds 2
 Write "Cleaning Up"
@@ -24,7 +24,6 @@ rm tsdl.ps1
 cls
 Write "Uninstalling Hamachi..."
 get-package Logmein* | uninstall-package
-cls
 Write "Hamachi Uninstalled Successfully"
 Start-Sleep -Seconds 2
 cls
